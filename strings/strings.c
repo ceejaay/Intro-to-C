@@ -9,6 +9,12 @@
 */
 int string_length(char *s)
 {
+  int num_of_chars = 0;
+  printf("%c", *s);
+
+
+
+  return num_of_chars;
 
 }
 
