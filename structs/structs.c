@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "lib.h"
 
-/* 
+/*
     Define the Person struct by specifying the fields that make up the
     Person type. Don't forget to specify the type of each field. A 
     Person should have the fields `name`, `age`, `height`, and `weight`.
@@ -38,7 +38,22 @@ Person *createPerson(char *name, int age, int height, int weight)
 */
 void destroyPerson(Person *who)
 {
-  free(who);
+  /* if (who->name != NULL) { */
+  /*   free(who->name); */
+  /* } */
+  /* if (who->age != NULL) { */
+  /*   free(who->age); */
+  /* } */
+  /* if (who->height != NULL) { */
+  /*   free(who->height); */
+  /* } */
+  /* if (who->weight != NULL) { */
+  /*   free(who->wieght); */
+  /* } */
+
+  if(who != NULL) {
+    free(who);
+  }
 }
 
 #ifndef TESTING
