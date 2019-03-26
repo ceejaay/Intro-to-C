@@ -13,8 +13,17 @@
 char *string_dup(char *src)
 {
 
-}
+  int l = string_length(src);
+  char *c = malloc(l * sizeof(char));
+  for (int i = 0; i < l; i++ )
+  {
+    c[i] = src[i];
+  }
 
+  printf("returned string: %s\n", c);
+  return c;
+
+}
 /*
     A generic version of string_copy, mem_copy receives a block of memory
     of any type and copies its contents to the destination pointer (dest).
@@ -49,7 +58,7 @@ int main(void)
     char *s = "Some string to duplicate.";
     char *dup = string_dup(s);
 
-    printf("Duplicated string: %s\n", dup);
+    printf("Duplicated string =>: %s\n", dup);
 
     int numbers[] = {100, 55, 4, 98, 10, 18, 90, 95, 43, 11, 47, 67, 89, 42, 49, 79};
     int n = sizeof(numbers) / sizeof(numbers[0]);

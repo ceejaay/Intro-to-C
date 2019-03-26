@@ -25,10 +25,14 @@ typedef struct Person {
 Person *createPerson(char *name, int age, int height, int weight)
 {
   Person *newPerson = malloc(sizeof(Person));
-  newPerson->name = name;
-  newPerson->age = age;
-  newPerson->weight = weight;
+  /* newPerson->name = name; */
+  (*newPerson).name = name;
+  (*newPerson).age = age;
+  /* newPerson->age = age; */
+  (*newPerson).weight = weight;
+  /* newPerson->weight = weight; */
   newPerson->height = height;
+  /* returning the pointer to the new person */
   return newPerson;
 }
 
@@ -61,7 +65,8 @@ int main(void)
 {
     Person *tony = createPerson("Tony Stark", 32, 64, 140);
 
-    printf("  Name: %s\n", tony->name);
+    printf("  Name: %s\n", (*tony).name);
+    /* printf("  Name: %s\n", tony->name); */
     printf("   Age: %d\n", tony->age);
     printf("Height: %d\n", tony->height);
     printf("Weight: %d\n", tony->weight);

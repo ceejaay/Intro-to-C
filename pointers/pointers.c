@@ -71,33 +71,17 @@ char *find_char(char *str, int c)
 char *find_string(char *haystack, char *needle)
 {
 
-  char *target = "delete thise";
+  char *target;
 
-  /* int length = 0; */
-  while(*needle != '\0')
+  while(*haystack != '\0')
   {
-    *needle ++;
+    if(*haystack == *needle)
+    {
+     target = haystack;
+    }
+    haystack++;
 
-  /*   printf(" the haystack address=> %d\n", haystack); */
-  /*   printf(" the haystack chars => %c\n", *haystack); */
-
-  /*   /1* length++; *1/ */
-  /*   haystack++; */
   }
-  /* printf("length %d\n", length); */
-
-  /* for(int i = 0; i < length; i++){ */
-  /*   printf("printed from loop => %d\n", *(haystack + i)); */
-  /* } */
-  /* printf("This string => %c\n", *haystack); */
-
-
-
-
-
-
-
-
 
   return target;
 
