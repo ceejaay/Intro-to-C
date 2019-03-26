@@ -53,6 +53,7 @@ char *find_char(char *str, int c)
       target = str;
     }
   /* increment the address to the next value in the string */
+  /* *str++; */
   str++;
   }
   /* printf("with star returns a value: %c", *target); */
@@ -70,9 +71,7 @@ char *find_char(char *str, int c)
 */
 char *find_string(char *haystack, char *needle)
 {
-
   char *target;
-
   while(*haystack != '\0')
   {
     if(*haystack == *needle)
@@ -80,9 +79,7 @@ char *find_string(char *haystack, char *needle)
      target = haystack;
     }
     haystack++;
-
   }
-
   return target;
 
 }

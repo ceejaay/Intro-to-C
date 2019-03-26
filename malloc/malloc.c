@@ -33,6 +33,26 @@ char *string_dup(char *src)
 */
 void mem_copy(void *dest, const void *src, int n)
 {
+  char *cast_s = (char *) src;
+  int length;
+  char *cast_d = (char *) dest;
+  printf("src: %d", *src);
+  while(*cast_s != '\0')
+  {
+    length++;
+    cast_s++;
+
+
+  }
+  printf("length %d\n", length );
+
+
+
+
+
+
+
+
 
 }
 
