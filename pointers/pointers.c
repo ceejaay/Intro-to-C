@@ -42,13 +42,11 @@ char *find_char(char *str, int c)
   /*   { */
   /*     target = i; */
   /*   } */
-
   /* } */
   while(*str != '\0')
   {
     /* check the value at address str */
     /* check it for the target value which passed in and represented by c */
-
     if(*str == c)
     {
       /* Here we take the target variable and set it to the address of the charachter we want*/
@@ -57,7 +55,6 @@ char *find_char(char *str, int c)
   /* increment the address to the next value in the string */
   str++;
   }
-
   /* printf("with star returns a value: %c", *target); */
   /* printf("without star returns an address%s", target); */
   return target;
@@ -71,11 +68,40 @@ char *find_char(char *str, int c)
 
     Do not use the `strstr` function from the standard library.
 */
-/* char *find_string(char *haystack, char *needle) */
-/* { */
+char *find_string(char *haystack, char *needle)
+{
+
+  char *target = "delete thise";
+
+  /* int length = 0; */
+  while(*needle != '\0')
+  {
+    *needle ++;
+
+  /*   printf(" the haystack address=> %d\n", haystack); */
+  /*   printf(" the haystack chars => %c\n", *haystack); */
+
+  /*   /1* length++; *1/ */
+  /*   haystack++; */
+  }
+  /* printf("length %d\n", length); */
+
+  /* for(int i = 0; i < length; i++){ */
+  /*   printf("printed from loop => %d\n", *(haystack + i)); */
+  /* } */
+  /* printf("This string => %c\n", *haystack); */
 
 
-/* } */
+
+
+
+
+
+
+
+  return target;
+
+}
 
 #ifndef TESTING
 int main(void)
@@ -83,12 +109,12 @@ int main(void)
   /* printf("hello"); */
 
     char *hello = "Hello";
-    /* char *world = "World"; */
+    char *world = "World";
     char *found_char = find_char(hello, 'e');
-    /* char *found_string = find_string(world, "or"); */
+    char *found_string = find_string(world, "or");
 
     printf("Found char: %s\n", found_char);
-    /* printf("Found string: %s\n", found_string); */
+    printf("Found string: %s\n", found_string);
 
     return 0;
 }
