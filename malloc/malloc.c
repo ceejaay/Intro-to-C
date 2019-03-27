@@ -14,10 +14,13 @@ char *string_dup(char *src)
 {
 
   int l = string_length(src);
+  /* allocates memory the necessary size */
   char *c = malloc(l * sizeof(char));
   for (int i = 0; i < l; i++ )
   {
+    printf("src i %c\n", src[i]);
     c[i] = src[i];
+
   }
 
   printf("returned string: %s\n", c);
@@ -33,25 +36,30 @@ char *string_dup(char *src)
 */
 void mem_copy(void *dest, const void *src, int n)
 {
+  /* n is number of bytes */
+
+
+ /* 100 */
+ /*   src 50 */
+
+
+ /* malloc? */
   char *cast_s = (char *) src;
-  int length;
   char *cast_d = (char *) dest;
-  printf("src: %d", *src);
-  while(*cast_s != '\0')
-  {
-    length++;
-    cast_s++;
-
-
+  for(int i = 0; i < n; i++){
+    cast_d[i] = cast_s[i];
   }
-  printf("length %d\n", length );
+
+  /* return cast_d; */
+  /* printf("src: %d", *src); */
+  /* while(*cast_s != '\0') */
+  /* { */
+  /*   length++; */
+  /*   cast_s++; */
 
 
-
-
-
-
-
+  /* } */
+  /* printf("length %d\n", length ); */
 
 
 }
