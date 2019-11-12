@@ -2,13 +2,16 @@
 #include <stdlib.h>
 #include "lib.h"
 
-/* 
+/*
     Define the Person struct by specifying the fields that make up the
     Person type. Don't forget to specify the type of each field. A 
     Person should have the fields `name`, `age`, `height`, and `weight`.
 */
 typedef struct Person {
-
+  char *name;
+  int age;
+  int height;
+  int weight;
 } Person;
 
 /*
@@ -21,7 +24,16 @@ typedef struct Person {
 */
 Person *createPerson(char *name, int age, int height, int weight)
 {
-
+  Person *newPerson = malloc(sizeof(Person));
+  /* newPerson->name = name; */
+  (*newPerson).name = name;
+  (*newPerson).age = age;
+  /* newPerson->age = age; */
+  (*newPerson).weight = weight;
+  /* newPerson->weight = weight; */
+  newPerson->height = height;
+  /* returning the pointer to the new person */
+  return newPerson;
 }
 
 /*
@@ -30,7 +42,22 @@ Person *createPerson(char *name, int age, int height, int weight)
 */
 void destroyPerson(Person *who)
 {
+  /* if (who->name != NULL) { */
+  /*   free(who->name); */
+  /* } */
+  /* if (who->age != NULL) { */
+  /*   free(who->age); */
+  /* } */
+  /* if (who->height != NULL) { */
+  /*   free(who->height); */
+  /* } */
+  /* if (who->weight != NULL) { */
+  /*   free(who->wieght); */
+  /* } */
 
+  if(who != NULL) {
+    free(who);
+  }
 }
 
 #ifndef TESTING
@@ -38,7 +65,8 @@ int main(void)
 {
     Person *tony = createPerson("Tony Stark", 32, 64, 140);
 
-    printf("  Name: %s\n", tony->name);
+    printf("  Name: %s\n", (*tony).name);
+    /* printf("  Name: %s\n", tony->name); */
     printf("   Age: %d\n", tony->age);
     printf("Height: %d\n", tony->height);
     printf("Weight: %d\n", tony->weight);

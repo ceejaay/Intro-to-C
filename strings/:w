@@ -38,26 +38,19 @@ char *reverse_string(char *rv, char *s)
   {
     length++;
   }
-
   printf("This should be a null character => %i\n", s[27] == '\0' );
+
   printf("Length: %d\n", length);
 
   /* start at minus one because the last char is the null char */
   for(int i = length - 1; i >= 0; i--)
   {
-    printf("i value: %d         ", i);
+    printf("i value: %d\n", i);
     rv[rv_length] = s[i];
-    printf("Null op? %i        ", s[i] == '\0');
-    printf("rv  value: %d         ", rv_length);
-    printf("Null op in rv? %i\n", rv[rv_length] == '\0');
     rv_length++;
   }
 
-  printf("length after the process %i\n", length);
-  printf("char at 27 %c\n", rv[length] == '\0');
-  /* don't need a null operator because one is already getting put in */
-
-  /* rv[length + 1] = '\0'; */
+  rv[length + 1] = '\0';
   return rv;
 
 

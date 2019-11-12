@@ -13,8 +13,20 @@
 char *string_dup(char *src)
 {
 
-}
+  int l = string_length(src);
+  /* allocates memory the necessary size */
+  char *c = malloc(l * sizeof(char));
+  for (int i = 0; i < l; i++ )
+  {
+    printf("src i %c\n", src[i]);
+    c[i] = src[i];
 
+  }
+
+  printf("returned string: %s\n", c);
+  return c;
+
+}
 /*
     A generic version of string_copy, mem_copy receives a block of memory
     of any type and copies its contents to the destination pointer (dest).
@@ -24,6 +36,31 @@ char *string_dup(char *src)
 */
 void mem_copy(void *dest, const void *src, int n)
 {
+  /* n is number of bytes */
+
+
+ /* 100 */
+ /*   src 50 */
+
+
+ /* malloc? */
+  char *cast_s = (char *) src;
+  char *cast_d = (char *) dest;
+  for(int i = 0; i < n; i++){
+    cast_d[i] = cast_s[i];
+  }
+
+  /* return cast_d; */
+  /* printf("src: %d", *src); */
+  /* while(*cast_s != '\0') */
+  /* { */
+  /*   length++; */
+  /*   cast_s++; */
+
+
+  /* } */
+  /* printf("length %d\n", length ); */
+
 
 }
 
@@ -49,7 +86,7 @@ int main(void)
     char *s = "Some string to duplicate.";
     char *dup = string_dup(s);
 
-    printf("Duplicated string: %s\n", dup);
+    printf("Duplicated string =>: %s\n", dup);
 
     int numbers[] = {100, 55, 4, 98, 10, 18, 90, 95, 43, 11, 47, 67, 89, 42, 49, 79};
     int n = sizeof(numbers) / sizeof(numbers[0]);
